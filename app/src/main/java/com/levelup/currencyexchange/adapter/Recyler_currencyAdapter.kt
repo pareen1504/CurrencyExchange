@@ -6,10 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
@@ -72,11 +69,7 @@ class Recyler_currencyAdapter(private val onAmountChangedListener: OnAmountChang
                 this.code = rate.symbol
             }
             if (!xchngamount.isFocused) {
-                if (amount.equals(1.0F)) {
-                    xchngamount.setText((rate.rate * amount).format())
-                }else{
-                    xchngamount.setText((rate.rate * amount).greaterthanoneformat())
-                }
+                xchngamount.setText((rate.rate * amount).format())
             }
         }
 
@@ -94,6 +87,8 @@ class Recyler_currencyAdapter(private val onAmountChangedListener: OnAmountChang
                     return@OnFocusChangeListener
                 }
 
+                xchngamount.setSelectAllOnFocus(true)
+                xchngamount.selectAll()
                 layoutPosition.takeIf { it > 0 }?.also { currentposition ->
                     getcodeposition.removeAt(currentposition).also {
                         getcodeposition.add(0, it)
@@ -115,7 +110,7 @@ class Recyler_currencyAdapter(private val onAmountChangedListener: OnAmountChang
                 override fun afterTextChanged(p0: Editable?) {}
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    if (xchngamount.isFocused &&!p0.toString().equals(".")) {
+                    if (xchngamount.isFocused && !p0.toString().equals(".")) {
                         onAmountChangedListener.onAmountChanged(symbolAtPostion(0), p0.toString().toFloat())
                     }
                 }

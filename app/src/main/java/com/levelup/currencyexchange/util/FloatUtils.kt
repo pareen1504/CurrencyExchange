@@ -19,5 +19,3 @@ fun String.toFloat(): Float = if (isNullOrBlank()) {
  * Locale safe
  */
 fun Float.format() : String = String.format(Locale.getDefault(), "%.2f", this)
-
-fun Float.greaterthanoneformat() : String = String.format(Locale.getDefault(), "%.0f", this)
