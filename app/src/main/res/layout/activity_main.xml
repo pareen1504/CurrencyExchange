@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+    <TextView
+            app:layout_constraintBottom_toTopOf="@+id/container"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/app_name"/>
+
+    <fragment
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:id="@+id/container"
+            android:name="com.levelup.currencyexchange.ui.MainActivityFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layout="@layout/fragment_main"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintEnd_toEndOf="@id/title"/>
+</android.support.constraint.ConstraintLayout>

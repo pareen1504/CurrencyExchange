@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+    <ImageView
+            android:id="@+id/icCurrencyFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/lblCurrencyName"
+            android:layout_alignTop="@id/lblCurrencySymbol"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_eur_flag"/>
+
+    <TextView
+            android:id="@+id/lblCurrencySymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/icCurrencyFlag"
+            android:text="EUR"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+
+    <TextView
+            android:id="@+id/lblCurrencyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblCurrencySymbol"
+            android:layout_toEndOf="@id/icCurrencyFlag"
+            android:text="Euro"
+            android:textColor="#919294"
+            android:textSize="14sp"/>
+
+    <EditText
+            android:id="@+id/txtCurrencyAmount"
+            android:text="1"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
