@@ -102,7 +102,7 @@ class Recyler_currencyAdapter(private val onAmountChangedListener: OnAmountChang
                 }
             }
 
-            xchngamount.setOnKeyListener(View.OnKeyListener { _, keycode, event ->
+            xchngamount.setOnKeyListener(View.OnKeyListener { _, keycode, _ ->
                 if (keycode == KeyEvent.KEYCODE_ENTER) {
                     symbolAtPostion(0)
                     return@OnKeyListener true

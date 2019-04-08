@@ -3,6 +3,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
 
+    <string name="error_unknown_title">Failure</string>
+    <string name="error_unknown">An unknown error occurred. Please, try later.</string>
+
     <string name="currency_aud_name">Australian dollar $ </string>
     <string name="currency_bgn_name">Bulgarian lev лв</string>
     <string name="currency_brl_name">Brazilian real R$</string>

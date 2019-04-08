@@ -13,6 +13,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import com.irozon.sneaker.Sneaker
 import com.levelup.currencyexchange.R
 import com.levelup.currencyexchange.adapter.Recyler_currencyAdapter
 import com.levelup.currencyexchange.repository.model.Rate
@@ -97,7 +98,13 @@ class MainActivityFragment : Fragment() , XchngView {
     }
 
 
-    override fun showError() {}
+    override fun showError() {
+        Sneaker.with(activity)
+            .setHeight(90)
+            .setTitle(getString(R.string.error_unknown_title))
+            .setMessage(getString(R.string.error_unknown))
+            .sneakError()
+    }
 
     override fun onDestroy() {
         super.onDestroy()
