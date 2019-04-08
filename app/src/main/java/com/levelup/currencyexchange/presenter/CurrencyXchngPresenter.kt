@@ -1,6 +1,5 @@
 package com.levelup.currencyexchange.presenter
 
-import android.util.Log
 import com.levelup.currencyexchange.repository.model.Rate
 import com.levelup.currencyexchange.repository.usecase.RateUsecase
 import com.levelup.currencyexchange.view.XchngView
